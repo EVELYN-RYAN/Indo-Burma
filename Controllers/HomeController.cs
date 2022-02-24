@@ -34,6 +34,6 @@ namespace Indo_Burma.Controllers
         return View(x);
 
     }
-
+         
     }
 }
