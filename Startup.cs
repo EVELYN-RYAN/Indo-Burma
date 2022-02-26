@@ -32,6 +32,7 @@ namespace Indo_Burma
             });
             services.AddScoped<IBookRepository, EFBookRrepository>();
             services.AddDistributedMemoryCache();
+            services.AddRazorPages();
             services.AddSession();
         }
 
@@ -57,7 +58,11 @@ namespace Indo_Burma
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("catPage", "{bookCat}/{pageNum}", new { Controller = "Home", action = "Index"});
+                endpoints.MapControllerRoute("paging", "{pageNum}", new { Controller = "Home", action = "Index", pageNum = "1" });
+                endpoints.MapControllerRoute("Category", "{bookCat}", new { Controller = "Home", action = "Index", pageNum = "1" });
                 endpoints.MapDefaultControllerRoute();
+                endpoints.MapRazorPages();
             });
         }
     }

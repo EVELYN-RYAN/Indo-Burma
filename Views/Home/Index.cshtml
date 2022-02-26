@@ -7,32 +7,19 @@
 <div class="Container">
     <div class="row">
         @foreach (Book b in Model.Books)
-            {
-        <div class="col-6 card card-outline-primary p-2">
-            <h4>@b.Title</h4>
-            <ul class="Container">
-                <li>Author: @b.Author</li>
-                <li>Publisher: @b.Publisher</li>
-                <li>Isbn: @b.Isbn</li>
-                <li>Classification: @b.Classification</li>
-                <li>Category: @b.Category</li>
-                <li>Page Count: @b.PageCount</li>
-                <span class="badge badge-pill badge-primary p-2" style="float:right"> <b>$@b.Price</b></span>
-            </ul>
-            
-        </div>
+        {
+            <partial name="BookDetails" model="b" />
         }
     </div>
+    </div>
+    <br />
+    @*Have to import @tag helpers with the right name for these to turn purple*@
+    <div class="d-flex justify-content-center">
+        <strong>
+            <div page-indicator="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
+                    page-class="btn" page-class-normal="btn-outline-dark"
+                    page-class-selected="btn-primary" class="btn-group pull-right m-1">
 
-</div>
-<br />
-@*Have to import @tag helpers with the right name for these to turn purple*@
-<div class="d-flex justify-content-center">
-    <strong>
-        <div page-indicator="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
-     page-class="btn" page-class-normal="btn-outline-dark"
-     page-class-selected="btn-primary" class="btn-group pull-right m-1">
-
-        </div>
-    </strong>
-</div>
+            </div>
+        </strong>
+    </div>

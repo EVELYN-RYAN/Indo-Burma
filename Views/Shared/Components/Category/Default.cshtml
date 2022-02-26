@@ -1,0 +1,12 @@
+﻿@{
+}
+@model IEnumerable<String>
+<div class="d-grid gap-2">
+    <a class="btn btn-secondary" asp-action="Index" asp-controller="Home" asp-route-pageNum="" asp-route-bookCat="" >Home</a>
+    <br />
+    @foreach (string c in Model)
+    {
+        <a class="btn @(ViewBag.SelectedCategory == c ? "btn-primary" : "btn-secondary")" asp-controller="Home" asp-action="Index" asp-route-pageNum="1" asp-route-bookCat="@c">@c</a>
+        <br />
+    }
+</div>

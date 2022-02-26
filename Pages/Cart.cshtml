@@ -1,0 +1,38 @@
+﻿@page
+@model Indo_Burma.Pages.CartModel
+@{
+}
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Cost</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var l in Model.cart.Items)
+        {
+            <tr>
+                <td>@l.Book.Title</td>
+                <td>@l.Quantity</td>
+                <td>$@Math.Round(l.Book.Price,2) </td>
+                <td>$@Math.Round(l.Quantity * l.Book.Price,2)</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td><b>Total:</b></td>
+            <td></td>
+            <td></td>
+            <td><b>@Model.cart.CalculateTotal().ToString("C")</b></td>
+        </tr>
+
+    </tfoot>
+</table>
+
+<div>
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Keep Shopping</a>
+</div>
