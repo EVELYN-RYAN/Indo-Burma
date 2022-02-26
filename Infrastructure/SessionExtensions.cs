@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json;
 using Microsoft.AspNetCore.Http;
-
+// Tbh I have no idea how this pages works
 namespace Indo_Burma.Infrastructure
 {
     public static class SessionExtension

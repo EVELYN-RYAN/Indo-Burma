@@ -1,11 +1,13 @@
 ﻿@{
 }
 @model IEnumerable<String>
+@*This page is callable through the vc:category tag*@
 <div class="d-grid gap-2">
     <a class="btn btn-secondary" asp-action="Index" asp-controller="Home" asp-route-pageNum="" asp-route-bookCat="" >Home</a>
     <br />
     @foreach (string c in Model)
     {
+@*If statement built with an argument, ? then, : else *@
         <a class="btn @(ViewBag.SelectedCategory == c ? "btn-primary" : "btn-secondary")" asp-controller="Home" asp-action="Index" asp-route-pageNum="1" asp-route-bookCat="@c">@c</a>
         <br />
     }

@@ -7,11 +7,12 @@ namespace Indo_Burma.Models
         public List<CartLineItem> Items { get; set; } = new List<CartLineItem>();
         public void AddItem(Book bk, int qty)
         {
+            //Grab the book info from the the book that was requested upon "add to cart"
             CartLineItem line = Items
                 .Where(b => b.Book.BookId == bk.BookId)
                 .FirstOrDefault();
 
-            if (line == null)
+            if (line == null) // If there is nothing currently in the cart  the add this.
             {
                 Items.Add(new CartLineItem
                 {
@@ -19,18 +20,19 @@ namespace Indo_Burma.Models
                     Quantity = qty
                 });
             }
-            else
+            else // Else if that book has already been place in the cart before.. append to QTY.
             {
                 line.Quantity += qty;
             }
         }
+        //Calculate and returns the total of entire cart.
         public double CalculateTotal()
         {
             double sum = Items.Sum(x => x.Quantity * x.Book.Price);
             return (sum);
         }
     }
-    public class CartLineItem
+    public class CartLineItem //small class properties special to the cart page.
     {
         public int LineID { get; set; }
         public Book Book { get; set; }

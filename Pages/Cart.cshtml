@@ -17,8 +17,8 @@
             <tr>
                 <td>@l.Book.Title</td>
                 <td>@l.Quantity</td>
-                <td>$@Math.Round(l.Book.Price,2) </td>
-                <td>$@Math.Round(l.Quantity * l.Book.Price,2)</td>
+                <td>$@l.Book.Price.ToString() </td>
+                <td>$@((l.Quantity * l.Book.Price).ToString())</td>
             </tr>
         }
     </tbody>

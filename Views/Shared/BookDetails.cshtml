@@ -1,11 +1,12 @@
 ﻿@{
 }
-
+@*Page built for the dynamic call for anypage. Called through <partial name= model=/>*@
 @model Book
 
 <div class="col-5 card card-outline-primary m-5">
     <h4>@Model.Title</h4>
     <ul class="Container">
+    @*This is a form hidden as a button that passes all the necessary book info and session info*@
         <form method="post" asp-page="/Cart" style="float:right;">
             <input type="hidden" asp-for="@Model.BookId" />
             <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
