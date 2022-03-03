@@ -5,7 +5,7 @@ namespace Indo_Burma.Models
     public class Cart
     {
         public List<CartLineItem> Items { get; set; } = new List<CartLineItem>();
-        public void AddItem(Book bk, int qty)
+        public virtual void AddItem(Book bk, int qty)
         {
             //Grab the book info from the the book that was requested upon "add to cart"
             CartLineItem line = Items
@@ -31,6 +31,14 @@ namespace Indo_Burma.Models
             double sum = Items.Sum(x => x.Quantity * x.Book.Price);
             return (sum);
         }
+        // Create the methods that will support the Sessionbasket class
+        public virtual void RemoveItem(Book bk)
+        {
+            Items.RemoveAll(x => x.Book.BookId == bk.BookId);
+
+
+        }
+        public virtual void ClearCart() => Items.Clear();
     }
     public class CartLineItem //small class properties special to the cart page.
     {

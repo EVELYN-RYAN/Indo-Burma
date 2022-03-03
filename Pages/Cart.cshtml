@@ -16,9 +16,21 @@
         {
             <tr>
                 <td>@l.Book.Title</td>
-                <td>@l.Quantity</td>
-                <td>$@l.Book.Price.ToString() </td>
-                <td>$@((l.Quantity * l.Book.Price).ToString())</td>
+                <td>@l.Quantity
+                    <form class="d-inline" method="post">
+                        <input type="hidden" name="bookId" value="@l.Book.BookId" />
+                        <input type="hidden" name="ReturnUrl" value="@Model.ReturnUrl" />
+                        <button type="submit" style="border:none" class=""><img src="https://img.icons8.com/ios-glyphs/24/00FF00/plus--v1.png" /></button>
+                    </form>
+                </td>
+                <td>@l.Book.Price.ToString("c") </td>
+                <td>@((l.Quantity * l.Book.Price).ToString("c"))
+                    <form class="d-inline" method="post" asp-page-handler="Remove">
+                        <input type="hidden" name="bookId" value="@l.Book.BookId" />
+                        <input type="hidden" name="ReturnUrl" value="@Model.ReturnUrl" />
+                        <button type="submit"style="border:none"class=""><img src="https://img.icons8.com/fluency-systems-filled/24/FF0000/circled-x.png" /></button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>
@@ -35,4 +47,5 @@
 
 <div>
     <a class="btn btn-primary" href="@Model.ReturnUrl">Keep Shopping</a>
+    <a class="btn btn-Green">Checkout</a>
 </div>
