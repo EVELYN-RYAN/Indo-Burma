@@ -19,6 +19,8 @@ namespace Indo_Burma.Models
         {
         }
 
+       //Allows the imports and ulization of these datasets
         public DbSet<Book> Books { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

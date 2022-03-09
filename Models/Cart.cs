@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 namespace Indo_Burma.Models
 {
@@ -42,6 +43,7 @@ namespace Indo_Burma.Models
     }
     public class CartLineItem //small class properties special to the cart page.
     {
+        [Key] // foreign key relationship creation
         public int LineID { get; set; }
         public Book Book { get; set; }
         public int Quantity { get; set; }

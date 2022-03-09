@@ -31,13 +31,14 @@ namespace Indo_Burma
             {
                 options.UseSqlite(Configuration["ConnectionStrings:BookDBConnection"]);
             });
-            services.AddScoped<IBookRepository, EFBookRrepository>();
+            services.AddScoped<IBookRepository, EFBookRepository>();
             services.AddDistributedMemoryCache();
             services.AddRazorPages();
             services.AddSession();
 
             services.AddScoped<Cart>(x => SessionCart.GetCart(x));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IOrderRepository, EFOrderRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -4,8 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Indo Burma</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
 </head>
 <body>
     <header>
@@ -19,8 +20,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul style="float:right" class="navbar-nav flex-grow-1 float-right">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Cart"><img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-shopping-cart-interface-kiranshastry-lineal-kiranshastry.png" /></a>
+                            @*Pulls in the cart and information summaries with icon(see components>CartSummaryViewComponent.cs)*@
+                            <vc:cart-summary/>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -29,18 +32,18 @@
     <div class="row m-1 p-1">
         <div name="links" class="col-2 bg-secondary bg-gradient text-white">
             @* A connection to the View Components file where a list of book categories is built*@
-           <vc:category></vc:category>
+           <vc:category/>
         </div>
         <div class="col-10">
             @RenderBody()
         </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <!--<footer class="border-top footer text-muted">-->
+        @*<div class="container">
             &copy; 2022 - Indo Burma
-        </div>
-    </footer>
+        </div>*@
+    <!--</footer>-->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
