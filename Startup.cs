@@ -60,7 +60,14 @@ namespace Indo_Burma
             app.UseRouting();
 
             app.UseAuthorization();
-
+            //Added from 414
+            app.UseHsts();
+            //Added from 414
+            app.Use(async (context, next) =>
+            {
+                context.Response.Headers.Add("X-Xss-Protection", "1");
+                await next();
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("catPage", "{bookCat}/{pageNum}", new { Controller = "Home", action = "Index"});
