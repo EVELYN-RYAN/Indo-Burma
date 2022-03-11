@@ -112,7 +112,11 @@ namespace Indo_Burma.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("OrderFulfilled")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("State")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Zip")

@@ -29,6 +29,7 @@
     <None Remove="Views\Shared\Components\Category\" />
     <None Remove="Views\Checkout\" />
     <None Remove="Views\Shared\Components\CartSummary\" />
+    <None Remove="Pages\admin\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -40,6 +41,7 @@
     <Folder Include="Views\Shared\Components\Category\" />
     <Folder Include="Views\Checkout\" />
     <Folder Include="Views\Shared\Components\CartSummary\" />
+    <Folder Include="Pages\admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css">

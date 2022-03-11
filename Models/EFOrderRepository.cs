@@ -16,7 +16,7 @@ namespace Indo_Burma.Models
         public IQueryable<Order> Orders =>
             context.Orders.Include(x => x.Lines).ThenInclude(x => x.Book);
 
-        IQueryable<Order> IOrderRepository.Orders { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        //IQueryable<Order> IOrderRepository.Orders { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void SaveOrder(Order order)
         {

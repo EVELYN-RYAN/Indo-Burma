@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Indo_Burma.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    [Migration("20220309035908_AddOrderTable")]
-    partial class AddOrderTable
+    [Migration("20220311052407_AddFulfilled")]
+    partial class AddFulfilled
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -114,7 +114,11 @@ namespace Indo_Burma.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("OrderFulfilled")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("State")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Zip")

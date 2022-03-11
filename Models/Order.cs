@@ -39,5 +39,9 @@ namespace Indo_Burma.Models
         public string ExpirationYear { get; set; }
         //[Required]
         public string CVV { get; set; }
+
+        // For the pages fulfilled and not fulfilled page
+        [BindNever]
+        public bool OrderFulfilled { get; set; }
     }
 }
