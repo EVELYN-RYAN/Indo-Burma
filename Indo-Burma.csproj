@@ -27,7 +27,6 @@
     <None Remove="Components\" />
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\Category\" />
-    <None Remove="Views\Checkout\" />
     <None Remove="Views\Shared\Components\CartSummary\" />
     <None Remove="Pages\admin\" />
   </ItemGroup>
@@ -39,7 +38,6 @@
     <Folder Include="Components\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\Category\" />
-    <Folder Include="Views\Checkout\" />
     <Folder Include="Views\Shared\Components\CartSummary\" />
     <Folder Include="Pages\admin\" />
   </ItemGroup>

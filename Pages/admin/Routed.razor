@@ -1,4 +1,5 @@
-﻿<Router AppAssembly="typeof(Startup).Assembly">
+﻿@*This code refers to the startup file saying using similar startup file to render these pages*@
+<Router AppAssembly="typeof(Startup).Assembly"> 
     <Found>
         <RouteView RouteData="@context" DefaultLayout="typeof(AdminLayout)"></RouteView>
     </Found>

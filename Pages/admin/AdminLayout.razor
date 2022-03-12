@@ -1,5 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
+@*This Component establishes the switching buttons between the Bookstable and the OrderTable*@
 <div class="bg-info text-white p-2">
     <span class="navbar-brand m-lg-2">Indo-Burma Bookstore Administration</span>
 </div>
@@ -7,13 +8,13 @@
 
     <div class="row p-2">
 
-        <div class="col-3">
+        <div class="col-2">
 
             <div class="d-grid gap-2">
                 <NavLink class="btn btn-outline-primary" href="/admin/books"
-                         ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">Books</NavLink>
-                <NavLink class="btn btn-outline-primary" href="/admin/Orders"
-                         ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">Orders</NavLink>
+                         ActiveClass="btn-info text-white" Match="NavLinkMatch.Prefix">Books</NavLink>
+                <NavLink class="btn btn-outline-primary" href="/admin/orders"
+                         ActiveClass="btn-info text-white" Match="NavLinkMatch.Prefix">Orders</NavLink>
             </div>
 
         </div>

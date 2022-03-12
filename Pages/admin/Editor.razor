@@ -16,6 +16,7 @@
     {
         <div class="form-group">
             <label>Book Id:</label>
+            @*this form is disabled to keep from tampering databse keys. But they are visible.*@
             <input class="form-control" disabled value="@b.BookId" />
         </div>
     }
@@ -60,6 +61,8 @@
         <InputNumber class="form-control" @bind-Value="b.Price" />
     </div>
 
+    <div style="color: red;" asp-validation-summary="All"></div>
+
     <button type="submit" class="btn btn-@ThemeColor">Save</button>
     <NavLink class="btn btn-secondary" href="/admin/books">Cancel</NavLink>
 </EditForm>
@@ -70,7 +73,7 @@
     [Parameter]
     public long Id { get; set; } = 0;
 
-    public string ThemeColor => Id == 0 ? "primary" : "warning";
+    public string ThemeColor => Id == 0 ? "Info" : "warning";
     public string TitleText => Id == 0 ? "Create" : "Edit";
 
     public Book b { get; set; } = new Book();

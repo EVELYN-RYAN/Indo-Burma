@@ -2,12 +2,24 @@
 @page "/admin/books"
 
 @inherits OwningComponentBase<IBookRepository>
+@*BOOTSTAP ADDITION 2 --> PREBUILT ALERTS AND MESSAGES*@
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong style="color:red;">Caution!</strong> Deleting a book with these buttons is irreversible.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
 <table class="table table-sm table-striped table-bordered">
     <thead>
         <tr>
             <th>BookID</th>
             <th>Book Name</th>
             <th>Regional Program</th>
+            <th>Price</th>
+            <th>Details</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -21,14 +33,16 @@
                     <td>@b.Author</td>
                     <td>@b.Price.ToString("c")</td>
 
+                            @*IMAGES INSTEAD OF BUTTONS*@
                     <td>
-                        <NavLink class="btn btn-info btn-sm" href="@GetDetailsUrl(b.BookId)">Details</NavLink>
+@*BOOTSTRAP ADDITION 1 ---> WHEN ADDING IMAGES YOU CAN'T CENTER THEM JUST USING TEXT-CENTER --> ROUNDED MX -AUTO D-BLOCK AS A CHILD CLASS TO TEXT CENTER DID THE TRICK FOR IMAGES*@
+                        <NavLink class="text-center" href="@GetDetailsUrl(b.BookId)"><img class="rounded mx-auto d-block" src="https://img.icons8.com/ios-glyphs/30/000000/details-pane.png"/></NavLink>
                     </td>
                     <td>
-                        <NavLink class="btn btn-warning btn-sm" href="@GetEditUrl(b.BookId)">Edit</NavLink>
+                        <NavLink class="text-center" href="@GetEditUrl(b.BookId)"><img class="rounded mx-auto d-block" src="https://img.icons8.com/material-sharp/24/000000/edit--v1.png" /></NavLink>
                     </td>
                     <td>
-                        <button class="btn btn-danger btn-sm" @onclick="@(x => RemoveBook(b))">Delete</button>
+                        <button class="text-center" @onclick="@(x => RemoveBook(b))"><img class="rounded mx-auto d-block" src="https://img.icons8.com/material-rounded/24/7C0D0E/filled-trash.png" /></button>
                     </td>
                 </tr>
 
@@ -44,7 +58,7 @@
     </tbody>
 </table>
 
-<NavLink class="btn btn-primary" href="/admin/projects/create">+ Add Book </NavLink>
+<NavLink class="btn btn-info" href="/admin/projects/create">+ Add Book </NavLink>
 
 @code {
 

@@ -2,6 +2,7 @@
     <thead>
         <tr>
             <th colspan="5" class="text-center">@TableTitle</th>
+            <th class="text-center">@IconHeader</th>
         </tr>
     </thead>
     <tbody>
@@ -17,9 +18,8 @@
                     <th>Quantity</th>
 
                     <td>
-                        <button class="btn btn-small btn-danger" @onclick="@(x=> OrderSelected.InvokeAsync(r.OrderNumber))">
-                            @ButtonLabel
-                        </button>
+                        <a class="text-center" style="cursor:pointer;" @onclick="@(x=> OrderSelected.InvokeAsync(r.OrderNumber))"> <img class="rounded mx-auto d-block" src=@ButtonIcon/>
+                        </a>
                     </td>
                 </tr>
                 @foreach (CartLineItem cl in r.Lines)
@@ -52,7 +52,11 @@
     public IEnumerable<Order> Orders { get; set; }
 
     [Parameter]
-    public string ButtonLabel { get; set; } = "Fulfilled";
+    public string ButtonIcon { get; set; } = "https://img.icons8.com/external-outline-icons-pause-08/48/000000/external-delivering-lined-shipping-outline-icons-pause-08.png";
+
+
+    [Parameter]
+    public string IconHeader { get; set; } = "Shipped";
 
     [Parameter]
     public EventCallback<int> OrderSelected { get; set; }

@@ -2,26 +2,30 @@
 
 @inherits OwningComponentBase<IOrderRepository>
 
+@*These sets fill in the table with the prelabled data. They call async tasks to update quickly*@
 <OrderTable TableTitle="Unfulfilled Orders" Orders="UnfulfilledOrders"
-               ButtonLabel="Fulfilled" OrderSelected="FulfillOrder"></OrderTable>
+               ButtonIcon="https://img.icons8.com/external-outline-icons-pause-08/48/000000/external-delivering-lined-shipping-outline-icons-pause-08.png"
+OrderSelected="FulfillOrder" IconHeader="Shipped"></OrderTable>
 
 <OrderTable TableTitle="Fulfilled Orders" Orders="FulfilledOrders"
-               ButtonLabel="Reset" OrderSelected="ResetOrder"></OrderTable>
+               ButtonIcon="https://img.icons8.com/android/24/7C0D0E/undo.png" OrderSelected="ResetOrder" IconHeader="Undo"></OrderTable>
 
 <button class="btn btn-info" @onclick="@(x=> UpdateData())">Refresh Data</button>
 
 @code{
+    // Declaring variables needed to calssify data on the page.
     public IOrderRepository repo => Service;
 
     public IEnumerable<Order> AllOrders { get; set; }
     public IEnumerable<Order> UnfulfilledOrders { get; set; }
     public IEnumerable<Order> FulfilledOrders { get; set; }
 
+    // When the page is synced this method will automatically update and save the data
     protected async override Task OnInitializedAsync()
     {
         await UpdateData();
     }
-
+    // and async tasks happens when it can. This is all redered on the client side
     public async Task UpdateData()
     {
         AllOrders = await repo.Orders.ToListAsync();

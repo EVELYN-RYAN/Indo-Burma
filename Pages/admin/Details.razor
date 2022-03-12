@@ -31,6 +31,7 @@
 
     protected override void OnParametersSet()
     {
+        //Books is refering to the razor page BOOKS no the book table and you have to code by convention.
         b = repo.Books.FirstOrDefault(x => x.BookId == Id);
     }
     public string EditUrl => $"/admin/books/edit/{b.BookId}";
