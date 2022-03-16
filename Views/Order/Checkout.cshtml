@@ -122,22 +122,22 @@ span.price {
                         <div class="col-50">
                             <h3>Billing Address</h3>
                             <label asp-for="FullName"><i class="fa fa-user"></i> Full Name</label>
-                            <input asp-for="FullName" type="text" id="firstName" name="fullname" placeholder="John M. Doe">
+                            <input name="FullName" asp-for="FullName" type="text" id="firstName" placeholder="John M. Doe">
                             <label asp-for="Email"><i class="fa fa-envelope"></i> Email</label>
-                            <input asp-for="Email" type="text" id="email" name="email" placeholder="john@example.com">
+                            <input name="Email" asp-for="Email" type="text" id="email" placeholder="john@example.com">
                             <label asp-for="Address"><i class="fa fa-address-card-o"></i> Address</label>
-                            <input asp-for="Address" type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                            <input name="Address" asp-for="Address" type="text" id="adr" placeholder="542 W. 15th Street">
                             <label asp-for="City"><i class="fa fa-institution"></i> City</label>
-                            <input asp-for="City" type="text" id="city" name="city" placeholder="New York">
+                            <input name="City" asp-for="City" type="text" id="city" placeholder="New York">
 
                             <div class="row">
                                 <div class="col-50">
                                     <label asp-for="State">State</label>
-                                    <input asp-for="State" type="text" id="state" name="state" placeholder="NY">
+                                    <input asp-for="State" type="text" id="state" name="State" placeholder="NY">
                                 </div>
                                 <div class="col-50">
                                     <label asp-for="Zip">Zip</label>
-                                    <input asp-for="Zip" type="text" id="zip" name="zip" placeholder="10001">
+                                    <input asp-for="Zip" type="text" id="zip" name="Zip" placeholder="10001">
                                 </div>
                             </div>
                         </div>
@@ -152,19 +152,19 @@ span.price {
                                 <i class="fa fa-cc-discover" style="color:orange;"></i>
                             </div>
                             <label asp-for="CardName">Name on Card</label>
-                            <input asp-for="CardName" type="text" id="cname" name="cardname" placeholder="John More Doe">
+                            <input asp-for="CardName" type="text" id="cname" name="CardName" placeholder="John More Doe">
                             <label asp-for="CardNumber">Credit card number</label>
-                            <input asp-for="CardNumber" type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                            <input asp-for="CardNumber" type="text" id="ccnum" name="CardNumber" placeholder="1111-2222-3333-4444">
                             <label asp-for="ExpirationMonth">Exp Month</label>
-                            <input asp-for="ExpirationMonth"placeholder="01">
+                            <input name="ExpirationMonth" asp-for="ExpirationMonth"placeholder="01">
                             <div class="row">
                                 <div class="col-50">
                                     <label asp-for="ExpirationYear">Exp Year</label>
-                                    <input asp-for="ExpirationYear"placeholder="22">
+                                    <input name="ExpirationYear" asp-for="ExpirationYear"placeholder="22">
                                 </div>
                                 <div class="col-50">
                                     <label asp-for="CVV">CVV</label>
-                                    <input asp-for="CVV" id="cvv" placeholder="352">
+                                    <input name="CVV" asp-for="CVV" id="cvv" placeholder="352">
                                 </div>
                             </div>
                         </div>

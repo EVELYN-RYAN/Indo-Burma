@@ -7,7 +7,7 @@
     <h4>@Model.Title</h4>
     <ul class="Container">
     @*This is a form hidden as a button that passes all the necessary book info and session info*@
-        <form method="post" asp-page="/Cart" style="float:right;">
+        <form method="post" name="AddToCart" asp-page="/Cart" style="float:right;">
             <input type="hidden" asp-for="@Model.BookId" />
             <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
             <button class="btn btn-primary">Add to Cart</button>
