@@ -1,11 +1,15 @@
 ﻿@page "/admin"
+@*Make this an authorized page*@
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
 @model Indo_Burma.Pages.admin.IndexModel
 @{
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title >Indo-Burma Bookstore Administration</title>
+    <title>Indo-Burma Bookstore Administration</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <base href="/" />
 </head>

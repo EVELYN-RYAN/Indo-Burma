@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+@model LoginModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Indo-Burma Login</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="bg-dark text-white p-2">
+        <span class="navbar-brand m-lg-2">Indo-Burma</span>
+    </div>
+    <div class="m-1 p-2">
+        <div class="text-danger" asp-validation-summary="All"></div>
+@*Bootstrap Extra #2 Login using card on grid *@
+        <div class="card mx-auto" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Login</h5>
+                <h6 class="card-subtitle mb-2 text-muted">For Admin Access</h6>
+                <form method="post" asp-controller="Account" asp-aciton="Login">
+                    <div class="form-group">
+                        <label asp-for="Username">Username:</label>
+                        <input asp-for="Username" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password">Password:</label>
+                        <input asp-for="Password" type="password" class="form-control" />
+                    </div>
+                    <button class="btn btn-primary" type="submit">Log In</button>
+                    <input type="hidden" asp-for="ReturnUrl" />
+                </form>
+            </div>
+        </div>
+</body>
+</html>
